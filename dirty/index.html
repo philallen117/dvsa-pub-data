@@ -33,8 +33,8 @@
         <slide class="title-slide segue nobackground">
   <hgroup class="auto-fadein">
     <h1>Quick and dirty rates analysis</h1>
-    <h2>MC2</h2>
-    <p>Phil Allen<br/>Kainossli</p>
+    <h2>Mobile Compliance 2</h2>
+    <p>Phil Allen<br/>Kainos</p>
   </hgroup>
   <article></article>  
 </slide>
@@ -43,25 +43,61 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <hgroup>
-    <h2>Read-And-Delete</h2>
+    <h2>Quick look at times of day</h2>
   </hgroup>
   <article data-timings="">
-    <ol>
-<li>Edit YAML front matter</li>
-<li>Write using R Markdown</li>
-<li>Use an empty line followed by three dashes to separate slides!</li>
-</ol>
+    <p><img src="assets/fig/unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4"></p>
+
+<ul>
+<li>Concentrate on hours 10 and 11</li>
+<li>Treat both as if same distribution</li>
+</ul>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="class" id="id" style="background:;">
+<slide class="" id="slide-2" style="background:;">
   <hgroup>
-    <h2>Slide 2</h2>
+    <h2>Look at distribution</h2>
   </hgroup>
   <article data-timings="">
-    <p>sfsfsf</p>
+    <p><img src="assets/fig/unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6"></p>
+
+<ul>
+<li>Bimodal, so simple Poisson process not a good fit</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Try kernel density fit</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-7-1.png" alt="plot of chunk unnamed-chunk-7"></p>
+
+<ul>
+<li>Find fitted quantiles and quickly check robustness against data</li>
+</ul>
+
+<!-- html table generated in R 3.2.3 by xtable 1.8-0 package -->
+
+<!-- Tue Mar 29 01:16:09 2016 -->
+
+<table border=1>
+<tr> <th>  </th> <th> est_quantiles </th> <th> observed_probs </th>  </tr>
+  <tr> <td align="right"> 90% </td> <td align="right"> 317 </td> <td align="right"> 0.9036 </td> </tr>
+  <tr> <td align="right"> 99% </td> <td align="right"> 437 </td> <td align="right"> 0.9905 </td> </tr>
+  <tr> <td align="right"> 99.9% </td> <td align="right"> 543 </td> <td align="right"> 0.9993 </td> </tr>
+  <tr> <td align="right"> 99.99% </td> <td align="right"> 630 </td> <td align="right"> 0.9999 </td> </tr>
+   </table>
+
+<ul>
+<li>So take 630 as 99.99% worst hour</li>
+</ul>
 
   </article>
   <!-- Presenter Notes -->
@@ -73,14 +109,20 @@
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Read-And-Delete'>
+        data-slide=1 title='Quick look at times of day'>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='Slide 2'>
+        data-slide=2 title='Look at distribution'>
          2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Try kernel density fit'>
+         3
       </a>
     </li>
   </ul>
